@@ -1,5 +1,147 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content{
+    width: 600px;
+    min-width: 600px;
+    height: 800px;
+    margin:auto;
+}
+
+#title{
+    font-size: 40px;
+    text-align: center;
+}
+
+#but{
+    /* 这里没有居中要改aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+    padding: 8px;
+    margin: auto;
+    font-size: 15px;
+    background-color: blanchedalmond;
+}
+
+#score{
+    font-size: 15px;
+    padding: 8px;
+    text-align: center;
+}
+
 #back{
     background-color: blanchedalmond;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
+}
+
+#opps{
+    /* 这里改一下样式aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+    display: none;
+    position: relative;
+    top: -360px;
+    left: 150px;
+    background-color: indianred;
+    border: 2px;
+    text-align: center;
+    font-size: 60px;
+    color: aliceblue;
+    width: 300px;
+    height: 120px;
+    line-height: 120px;
+}
+
+.block{
+    display: inline-block;
+    vertical-align: top;
+    background-color: burlywood;
+    width: 125px;
+    height: 125px;
+    line-height: 125px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+/* 这里改一下颜色aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+#color0{
+    background-color: burlywood;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color2{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color4{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color8{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color16{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color32{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color64{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color128{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color256{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color512{
+    background-color: peru;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color1024{
+    background-color: peru;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+#color2048{
+    background-color: peru;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
 }
