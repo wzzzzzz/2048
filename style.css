@@ -1,16 +1,19 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    padding-top: 100px;
+    padding-top: 50px;
+    height: 100%;
+    overflow: hidden;
 }
 
 #content{
-    width: 600px;
-    min-width: 600px;
-    height: 800px;
+    width: 370px;
+    min-width: 370px;
+    height: 550px;
     margin:auto;
 }
 
 #title{
+    margin-bottom: 10px;
     font-size: 40px;
     text-align: center;
 }
@@ -19,11 +22,14 @@ body{
     display: block;
     padding: 8px;
     margin: auto;
+    border: 2px rgb(232, 201, 152) solid;
+    border-radius: 12px;
     font-size: 15px;
     background-color: blanchedalmond;
 }
 
 #score{
+    margin: 6px;
     font-size: 15px;
     padding: 8px;
     text-align: center;
@@ -31,120 +37,76 @@ body{
 
 #back{
     background-color: blanchedalmond;
-    width: 600px;
-    height: 600px;
+    width: 370px;
+    height: 370px;
     border-radius: 14px;
 }
 
 #opps{
     display: none;
     position: relative;
-    top: -364px;
-    left: 146px;
+    top: -227px;
+    left: 83px;
     background-color: rgb(217, 65, 65);
-    border: 4px rgb(155, 0, 0) solid;
+    border: 2px rgb(155, 0, 0) solid;
     border-radius: 12px;
     text-align: center;
-    font-size: 60px;
+    font-size: 30px;
     color: aliceblue;
-    width: 300px;
-    height: 120px;
-    line-height: 120px;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
 }
 
 .block{
     display: inline-block;
     vertical-align: top;
     background-color: rgb(232, 201, 152);
-    width: 125px;
-    height: 125px;
-    line-height: 125px;
-    margin-left: 20px;
-    margin-top: 20px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-left: 10px;
+    margin-top: 10px;
     border-radius: 8px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
 }
 
 #color0{
     background-color: rgb(232, 201, 152);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color2{
     background-color: rgb(204, 166, 106);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color4{
     background-color: rgb(180, 141, 80);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color8{
     background-color: rgb(168, 117, 36);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color16{
     background-color: rgb(168, 98, 36);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color32{
     background-color: rgb(168, 81, 5);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color64{
     background-color: rgb(148, 70, 0);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color128{
     background-color: rgb(115, 54, 0);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color256{
     background-color: rgb(115, 27, 0);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color512{
     background-color: rgb(94, 22, 0);
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color1024{
     background-color: rgb(94, 0, 0);
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }
 #color2048{
     background-color: rgb(80, 0, 0);
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    color: aliceblue;
 }

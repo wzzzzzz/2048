@@ -78,18 +78,19 @@ var keyevent=function(){
         down();
     }
 };
-var touchevent=function(){
+var touchevent=function(event){  
         switch(event.type){
             case "touchstart":{
                 touchx=event.touches[0].pageX;
                 touchy=event.touches[0].pageY;
+                //event.preventDefault();
                 //document.getElementById("test0").innerHTML=touchx+" "+touchy;
                 break;
             } 
             case "touchend":{
                 var tx=event.changedTouches[0].pageX;
                 var ty=event.changedTouches[0].pageY;
-
+                //event.preventDefault();
                 var xy=(tx-touchx)/(ty-touchy);
                 if(tx-touchx>10&&(xy>=1||xy<-1)){
                     //document.getElementById("test2").innerHTML=tx+"右"+ty;
@@ -109,9 +110,11 @@ var touchevent=function(){
                 }
                 break;
             } 
-            //这里疑似还有点问题，在qq浏览器里不能阻止滑动屏幕？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+            //不能阻止滑动屏幕？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
             case "touchmove":{
+                document.getElementById("test").innerHTML="ok1111111111";
                 event.preventDefault();
+                document.getElementById("test").innerHTML="ok2222222222";
                 break;
             } 
         }
@@ -119,9 +122,11 @@ var touchevent=function(){
 //为啥这里一定要放到后面？不是声明提前吗？？？？？？？？？？？？？？？？？？？？？
 var body=document.getElementsByTagName("body")[0];
 document.addEventListener("keyup",keyevent);
-document.addEventListener("touchstart",touchevent);
-document.addEventListener("touchend",touchevent);
-document.addEventListener("touchmove",touchevent);
+body.addEventListener("touchstart",touchevent);
+body.addEventListener("touchend",touchevent);
+body.addEventListener("touchmove",touchevent,true);
+document.addEventListener("touchmove",touchevent,true);
+window.addEventListener("touchmove",touchevent,true);
 
 var up=function(){
     var flag=false;
