@@ -1,0 +1,9 @@
+    <servlet>
+        <servlet-name>scoreApi</servlet-name>
+        <servlet-class>my2048.servlet/scoreApi</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>scoreApi</servlet-name>
+        <url-pattern>/2048</url-pattern>
+    </servlet-mapping>
