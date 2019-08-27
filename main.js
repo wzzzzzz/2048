@@ -4,6 +4,16 @@ var touchx=0;
 var touchy=0;
 
 var init=function(){
+    gethighscore();
+    //console.log(localStorage.highscore);
+    if(localStorage.getItem("highscore")){
+        document.getElementById("highscore").innerHTML="highest score:"+localStorage.highscore;
+    }
+    else {
+        localStorage.setItem("highscore",0);
+        document.getElementById("highscore").innerHTML="highest score:0";
+    }
+
     var ele=document.getElementById("opps");
     ele.style.display="none";
     //初始化，随机两个位置出现2
@@ -28,6 +38,32 @@ var init=function(){
     show();
 };
 document.getElementById("but").onclick=init;
+
+var gethighscore=function(){
+    var xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=function()
+    {
+        if (xhr.readyState==4 && xhr.status==200)
+        {
+            xmlDoc=xhr.responseText;
+        }
+    }
+    xhr.open("GET","score.txt",true);
+    xhr.send();
+}
+
+var sendhighscore=function(score){
+    var xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=function()
+    {
+        if (xhr.readyState==4 && xhr.status==200)
+        {
+            xmlDoc=xhr.responseText;
+        }
+    }
+    xmlhttp.open("POST","score.txt",true);
+    xmlhttp.send(score);
+}
 
 var checklose=function(){
     //检查游戏是否输掉
@@ -338,12 +374,14 @@ var show=function(){
 };
 
 var win=function(){
+    sendhighscore();
     var ele=document.getElementById("opps");
     ele.style.display="block";
     ele.innerHTML="you win!";
 };
 
 var lose=function(){
+    sendhighscore();
     var ele=document.getElementById("opps")
     ele.style.display="block";
     ele.innerHTML="you lose!";

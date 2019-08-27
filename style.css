@@ -34,6 +34,12 @@ body{
     padding: 8px;
     text-align: center;
 }
+#highscore{
+    margin: 6px;
+    font-size: 15px;
+    padding: 8px;
+    text-align: center;
+}
 
 #back{
     background-color: blanchedalmond;
