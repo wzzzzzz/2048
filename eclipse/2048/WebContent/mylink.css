@@ -1,0 +1,74 @@
+#my{
+    float: left;
+}
+#my div{
+    float: left;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    background-color: cadetblue;
+}
+#linkshow{
+    margin-left: 10px;
+}
+
+#linkhide{
+    margin-left: -50px;
+}
+#my:hover #linkhide{
+    animation: showbut1 1s linear 0s 1 normal running forwards;
+    -moz-animation: showbut1 1s linear 0s 1 normal running forwards;	/* Firefox */
+    -webkit-animation: showbut1 1s linear 0s 1 normal running forwards;	/* Safari 和 Chrome */
+    -o-animation: showbut1 1s linear 0s 1 normal running forwards;	/* Opera */
+}
+
+#my:hover #linkhide1{
+    animation: showbut1 1s linear 0s 1 normal running forwards;
+    -moz-animation: showbut1 1s linear 0s 1 normal running forwards;	/* Firefox */
+    -webkit-animation: showbut1 1s linear 0s 1 normal running forwards;	/* Safari 和 Chrome */
+    -o-animation: showbut1 1s linear 0s 1 normal running forwards;	/* Opera */
+}
+@keyframes showbut1 {
+    0%{margin-top: 0px;}
+    100%{margin-top: 60px;}
+}
+@-moz-keyframes showbut1{
+    0%{margin-top: 0px;}
+    100%{margin-top: 60px;}
+}
+@-webkit-keyframes showbut1{
+    0%{margin-top: 0px;}
+    100%{margin-top: 60px;}
+}
+@-o-keyframes showbut1{
+    0%{margin-top: 0px;}
+    100%{margin-top: 60px;}
+}
+#linkhide2{
+    margin-left: -50px;
+}
+#my:hover #linkhide2{
+    animation: showbut2 1s linear 1s 1 normal running forwards;
+    -moz-animation: showbut2 1s linear 1s 1 normal running forwards;	/* Firefox */
+    -webkit-animation: showbut2 1s linear 1s 1 normal running forwards;	/* Safari 和 Chrome */
+    -o-animation: showbut2 1s linear 1s 1 normal running forwards;	/* Opera */
+}
+@keyframes showbut2 {
+    0%{margin-top: 60px;}
+    100%{margin-top: 120px;}
+}
+@-moz-keyframes showbut2{
+    0%{margin-top: 60px;}
+    100%{margin-top: 120px;}
+}
+@-webkit-keyframes showbut2{
+    0%{margin-top: 0px;}
+    100%{margin-top: 120px;}
+}
+@-o-keyframes showbut2{
+    0%{margin-top: 0px;}
+    100%{margin-top: 120px;}
+}

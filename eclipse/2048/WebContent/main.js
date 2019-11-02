@@ -4,23 +4,21 @@ var touchx=0;
 var touchy=0;
 
 var init=function(){
-	console.log("new game");
-    var str=gethighscore();
-    document.getElementById("highscore").innerHTML="highest score:"+str;
-    
+    gethighscore();
     //console.log(localStorage.highscore);
-    //if(localStorage.getItem("highscore")){
-    //    document.getElementById("highscore").innerHTML="highest score:"+localStorage.highscore;
-    //}
-    //else {
-    //    localStorage.setItem("highscore",0);
-    //    document.getElementById("highscore").innerHTML="highest score:0";
-    //}
+    if(localStorage.getItem("highscore")){
+        document.getElementById("highscore").innerHTML="highest score:"+localStorage.highscore;
+    }
+    else {
+        localStorage.setItem("highscore",0);
+        document.getElementById("highscore").innerHTML="highest score:0";
+    }
 
     var ele=document.getElementById("opps");
     ele.style.display="none";
     //初始化，随机两个位置出现2
     score=0;
+    console.log("new game");
     for(var i=0;i<4;i++){
         for(j=0;j<4;j++){
             num[4*i+j]=0;
@@ -42,25 +40,6 @@ var init=function(){
 document.getElementById("but").onclick=init;
 
 var gethighscore=function(){
-	console.log("get score");
-	var str="0";
-    var xhr=new XMLHttpRequest();
-    xhr.onreadystatechange=function()
-    {
-        if (xhr.readyState==4 && xhr.status==200)
-        {
-        	console.log("get score ok");
-        	str=xhr.responseText;
-        	return str;
-        }
-    }
-    xhr.open("GET","http://localhost:8080/2048/scoreServlet",true);
-    xhr.send();
-    console.log("get score done");
-}
-
-var sendhighscore=function(score){
-	console.log("post score");
     var xhr=new XMLHttpRequest();
     xhr.onreadystatechange=function()
     {
@@ -69,9 +48,21 @@ var sendhighscore=function(score){
             xmlDoc=xhr.responseText;
         }
     }
-    xhr.open("POST","http://localhost:8080/2048/scoreServlet",true);
-    xhr.send(score);
-    console.log("post score done");
+    xhr.open("GET","score.txt",true);
+    xhr.send();
+}
+
+var sendhighscore=function(score){
+    var xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=function()
+    {
+        if (xhr.readyState==4 && xhr.status==200)
+        {
+            xmlDoc=xhr.responseText;
+        }
+    }
+    xmlhttp.open("POST","score.txt",true);
+    xmlhttp.send(score);
 }
 
 var checklose=function(){
@@ -99,31 +90,39 @@ var checklose=function(){
     lose();
 };
 
-//最好加一个阻止页面上下左右移动的？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
-var keyevent=function(){
-    var code=event.which || event.keyCode;
+var keyevent=function(event){
+    var code=event.keyCode||event.which;
     if(code==37||code==65){
         event.preventDefault();
+        event.stopPropagation();
+        event.cancelBubble=true;
         console.log("左");
         left();
     }
     if(code==38||code==87){
         event.preventDefault();
+        event.stopPropagation();
+        event.cancelBubble=true;
         console.log("上");
         up();
     }
     if(code==39||code==68){
         event.preventDefault();
+        event.stopPropagation();
+        event.cancelBubble=true;
         console.log("右");
         right();
     }
     if(code==40||code==83){
         event.preventDefault();
+        event.stopPropagation();
+        event.cancelBubble=true;
         console.log("下");
         down();
     }
 };
-var touchevent=function(event){  
+//这里还是有问题，滑动切换页面禁止不了。qq和uc浏览器不可以，猎豹和火狐和chrome可以。
+var touchevent=function(event){
         switch(event.type){
             case "touchstart":{
                 touchx=event.touches[0].pageX;
@@ -154,24 +153,32 @@ var touchevent=function(event){
                     up();
                 }
                 break;
-            } 
-            //不能阻止滑动屏幕？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+            }
             case "touchmove":{
-                document.getElementById("test").innerHTML="ok1111111111";
+                console.log(event.type);
                 event.preventDefault();
-                document.getElementById("test").innerHTML="ok2222222222";
-                break;
-            } 
+                event.stopPropagation();
+                event.cancelBubble=true;
+                return false;
+                console.log(event.type);
+            }
         }
 };
-//为啥这里一定要放到后面？不是声明提前吗？？？？？？？？？？？？？？？？？？？？？
+
 var body=document.getElementsByTagName("body")[0];
-document.addEventListener("keyup",keyevent);
-body.addEventListener("touchstart",touchevent);
-body.addEventListener("touchend",touchevent);
-body.addEventListener("touchmove",touchevent,true);
-document.addEventListener("touchmove",touchevent,true);
-window.addEventListener("touchmove",touchevent,true);
+var cont=document.getElementById("content");
+document.addEventListener("keydown",keyevent);
+
+cont.addEventListener("touchstart",touchevent,true);
+cont.addEventListener("touchend",touchevent,true);
+cont.addEventListener("touchmove",touchevent,true);
+// document.addEventListener("touchstart",touchevent,true);
+// document.addEventListener("touchend",touchevent,true);
+// document.addEventListener("touchmove",touchevent,true);
+// window.addEventListener("touchstart",touchevent,true);
+// window.addEventListener("touchend",touchevent,true);
+// window.addEventListener("touchmove",touchevent,true);
+
 
 var up=function(){
     var flag=false;

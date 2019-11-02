@@ -166,17 +166,18 @@ var touchevent=function(event){
 };
 
 var body=document.getElementsByTagName("body")[0];
+var cont=document.getElementById("content");
 document.addEventListener("keydown",keyevent);
 
-body.addEventListener("touchstart",touchevent,true);
-body.addEventListener("touchend",touchevent,true);
-body.addEventListener("touchmove",touchevent,true);
-document.addEventListener("touchstart",touchevent,true);
-document.addEventListener("touchend",touchevent,true);
-document.addEventListener("touchmove",touchevent,true);
-window.addEventListener("touchstart",touchevent,true);
-window.addEventListener("touchend",touchevent,true);
-window.addEventListener("touchmove",touchevent,true);
+cont.addEventListener("touchstart",touchevent,true);
+cont.addEventListener("touchend",touchevent,true);
+cont.addEventListener("touchmove",touchevent,true);
+// document.addEventListener("touchstart",touchevent,true);
+// document.addEventListener("touchend",touchevent,true);
+// document.addEventListener("touchmove",touchevent,true);
+// window.addEventListener("touchstart",touchevent,true);
+// window.addEventListener("touchend",touchevent,true);
+// window.addEventListener("touchmove",touchevent,true);
 
 
 var up=function(){
